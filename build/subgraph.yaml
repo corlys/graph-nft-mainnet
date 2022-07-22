@@ -1,8 +1,7 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
-  # ALL ERC721
   - kind: ethereum/contract
     name: IERC721
     network: mainnet
@@ -18,12 +17,12 @@ dataSources:
         - Account
       abis:
         - name: IERC721
-          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC721.json
+          file: IERC721/node_modules/@openzeppelin/contracts/build/contracts/IERC721.json
         - name: IERC721Metadata
-          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
+          file: IERC721/node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
         - name: ERC721
-          file: ./abis/ERC721.json
+          file: IERC721/abis/ERC721.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: IERC721/IERC721.wasm
