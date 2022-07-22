@@ -2,12 +2,17 @@ type Token @entity {
   id: ID!
   tokenId: BigInt!
   tokenURI: String!
-  # externalURL: String!
-  # ipfsURI: String!
+  imageURI: String
   owner: Account!
+  collection: Collection!
 }
 
 type Account @entity {
   id: ID!
   tokens: [Token!]! @derivedFrom(field: "owner")
+}
+
+type Collection @entity {
+  id: ID!
+  tokens: [Token!]! @derivedFrom(field: "collection")
 }

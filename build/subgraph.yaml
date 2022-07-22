@@ -1,6 +1,8 @@
 specVersion: 0.0.4
 schema:
   file: schema.graphql
+features:
+  - ipfsOnEthereumContracts
 dataSources:
   - kind: ethereum/contract
     name: IERC721
@@ -15,6 +17,7 @@ dataSources:
       entities:
         - Token
         - Account
+        - Collection
       abis:
         - name: IERC721
           file: IERC721/node_modules/@openzeppelin/contracts/build/contracts/IERC721.json
